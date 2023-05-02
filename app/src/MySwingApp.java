@@ -106,7 +106,52 @@ public class MySwingApp {
                 g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
                 g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
             }
+            if (CURRENT_STATE == 2){
+                g.fillOval(LayerY, 225, 20, 20);
+                g.setColor(Color.GREEN);
 
+                g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
+                g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
+                g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
+
+                g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
+                g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
+                g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
+
+                g.setColor(Color.RED);
+
+                g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
+                g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
+
+                g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
+                g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
+
+                g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
+                g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
+            }
+            if (CURRENT_STATE == 3){
+                g.fillOval(LayerX, 375, 20, 20);//小车,这里只设置一辆直行的小车
+                g.setColor(Color.GREEN);
+
+                g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
+                g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
+                g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
+
+                g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
+                g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
+                g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
+
+                g.setColor(Color.RED);
+
+                g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
+                g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
+
+                g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
+                g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
+
+                g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
+                g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
+            }
         }
     }
     MyCanvas drawArea = new MyCanvas();
