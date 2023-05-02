@@ -1,13 +1,11 @@
 /**
  * @author: Christy Guo
- * @create_date: ${DATE} ${TIME}
+ * @create_date: 2023-05-02 2:58 PM
  * @desc:
  * @modifier:
  */
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -57,103 +55,107 @@ public class MySwingApp {
                 LayerY = 0;
                 LayerX = 500;
             }
-
-            if (CURRENT_STATE == 0){
-                g.fillOval(225, LayerX, 20, 20);
-                g.setColor(Color.GREEN);
-
-                g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
-                g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
-                g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
-
-                g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
-                g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
-                g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
-
-                g.setColor(Color.RED);
-
-                g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
-                g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
-
-                g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
-                g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
-
-
-                g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
-                g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
-
-            }
-            if (CURRENT_STATE == 1){
-                g.fillOval(375, LayerY, 20, 20);//
-                g.setColor(Color.GREEN);
-
-                g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
-                g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
-                g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
-
-                g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
-                g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
-                g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
-
-                g.setColor(Color.RED);
-
-                g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
-                g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
-
-                g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
-                g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
-
-                g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
-                g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
-            }
-            if (CURRENT_STATE == 2){
-                g.fillOval(LayerY, 225, 20, 20);
-                g.setColor(Color.GREEN);
-
-                g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
-                g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
-                g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
-
-                g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
-                g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
-                g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
-
-                g.setColor(Color.RED);
-
-                g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
-                g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
-
-                g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
-                g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
-
-                g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
-                g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
-            }
-            if (CURRENT_STATE == 3){
-                g.fillOval(LayerX, 375, 20, 20);//小车,这里只设置一辆直行的小车
-                g.setColor(Color.GREEN);
-
-                g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
-                g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
-                g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
-
-                g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
-                g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
-                g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
-
-                g.setColor(Color.RED);
-
-                g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
-                g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
-
-                g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
-                g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
-
-                g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
-                g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
-            }
+            generateState(g);
         }
     }
+
+    private void generateState (Graphics g) {
+        if (CURRENT_STATE == 0){
+            g.fillOval(225, LayerX, 20, 20);
+            g.setColor(Color.GREEN);
+
+            g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
+            g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
+            g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
+
+            g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
+            g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
+            g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
+
+            g.setColor(Color.RED);
+
+            g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
+            g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
+
+            g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
+            g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
+
+
+            g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
+            g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
+
+        }
+        if (CURRENT_STATE == 1){
+            g.fillOval(375, LayerY, 20, 20);//
+            g.setColor(Color.GREEN);
+
+            g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
+            g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
+            g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
+
+            g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
+            g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
+            g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
+
+            g.setColor(Color.RED);
+
+            g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
+            g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
+
+            g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
+            g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
+
+            g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
+            g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
+        }
+        if (CURRENT_STATE == 2){
+            g.fillOval(LayerY, 225, 20, 20);
+            g.setColor(Color.GREEN);
+
+            g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
+            g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
+            g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
+
+            g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
+            g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
+            g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
+
+            g.setColor(Color.RED);
+
+            g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
+            g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
+
+            g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
+            g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
+
+            g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
+            g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
+        }
+        if (CURRENT_STATE == 3){
+            g.fillOval(LayerX, 375, 20, 20);
+            g.setColor(Color.GREEN);
+
+            g.fillOval(LINE_1, 310, C_SIZE, C_SIZE); // light 12
+            g.fillOval(LINE_1, 360, C_SIZE, C_SIZE); // light 11
+            g.fillOval(LINE_1, 405, C_SIZE, C_SIZE); // light 10
+
+            g.fillOval(160, LINE_1, C_SIZE, C_SIZE); // light 1
+            g.fillOval(LINE_2, 160, C_SIZE, C_SIZE); // light 4
+            g.fillOval(405, LINE_2, C_SIZE, C_SIZE); // light 7
+
+            g.setColor(Color.RED);
+
+            g.fillOval(210, LINE_1, C_SIZE, C_SIZE); // light 2
+            g.fillOval(260, LINE_1, C_SIZE, C_SIZE); // light 3
+
+            g.fillOval(LINE_2, 210, C_SIZE, C_SIZE); // light 5
+            g.fillOval(LINE_2, 260, C_SIZE, C_SIZE); // light 6
+
+            g.fillOval(360, LINE_2, C_SIZE, C_SIZE); // light 8
+            g.fillOval(310, LINE_2, C_SIZE, C_SIZE); // light 9
+        }
+    }
+
     MyCanvas drawArea = new MyCanvas();
     public void init() {
         // Time listener of the lamp, which updates the status of the lamp every 1000ms
